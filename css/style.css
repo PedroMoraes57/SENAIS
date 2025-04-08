@@ -272,5 +272,157 @@ body{
     opacity: 1;
     transform: translateY(0);
 }
+.cursosSENAIS{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.cursosSENAIS.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+.titulosectioncursos{
+    margin-bottom: 5vh;
+    max-width: 70vh;
+    font-size: 3vh;
+}
+.cursos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6vh;
+    overflow: visible;
+    margin-bottom: 10vh;
+}
+.cursosSENAIS h2{
+    font-size: 3.5vh;
+    color: var(--segundaria);
+}
+.containercursos {
+    position: relative;
+    overflow: hidden;
+    width: 30vh;
+    height: 60vh;
+    color: var(--textcolor);
+    border-radius: 3vh;
+    box-shadow: 0 0 0.5vh var(--segundaria);
+    transition: transform 0.3s;
+}
+#primeiro{
+    background-image: url(/img/curso1.png);
+}
+#segundo{
+    background-image: url(/img/curso2.png);
+}
+#terceiro{
+    background-image: url(/img/curso3.png);
+}
+#quarto{
+    background-image: url(/img/curso4.png);
+}
+
+
+.containercursos p {
+    padding: 2vh;
+    font-size: 1.5vh;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* camada escura */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 2vh;
+    text-align: center;
+}
+
+.containercursos:hover .overlay {
+    opacity: 1;
+}
+
+.overlay button {
+    margin-top: 1.5vh;
+    padding: 1vh 2vh;
+    border: none;
+    border-radius: 1vh;
+    background-color: var(--terciaria);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.5vh;
+    transition: 0.5s;
+}
+.overlay button:hover{
+    background-color: var(--primaria);
+}
+.feedback{
+    background-color: var(--terciaria);
+    width: 100%;
+    height: 70vh;
+    margin-top: -0.7vh;
+}
+.feedback h2{
+    text-align: center;
+    font-size: 3.5vh;
+    color: var(--segundaria);
+    padding-top: 6vh;
+}
+.spanbranco{
+    color: var(--textcolor);
+}
+.avaliacoes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 5vh;
+}
+.avaliacao {
+    direction: rtl; 
+    font-size: 3vh;
+    display: flex;
+    padding: 2vh;
+    background-color: var(--textcolor);
+    width: 60vh;
+    height: 40vh;
+  }
+  
+  .avaliacao input[type="radio"] {
+    display: none;
+  }
+  
+  .avaliacao label {
+    color: #ccc; 
+    cursor: pointer;
+    transition: color 0.2s;
+    max-height: 1vh;
+
+  }
+  
+  .avaliacao input:checked ~ label,
+  .avaliacao label:hover,
+  .avaliacao label:hover ~ label {
+    color: #FFD700; 
+  }
+
+  .avaliacao p{
+    margin-top: 7vh;
+    text-align:left;
+    font-size: 1.7vh;
+  }
+  
+
+
+  
+  
 
 

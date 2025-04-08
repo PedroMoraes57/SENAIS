@@ -60,6 +60,21 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', checkVisibility);
     checkVisibility();  // Verifica se algum elemento está visível ao carregar a página
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll('.cursosSENAIS');
+
+    function checkVisibility() {
+        elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                element.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility();  // Verifica se algum elemento está visível ao carregar a página
+});
 
 
 
