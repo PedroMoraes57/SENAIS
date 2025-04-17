@@ -75,7 +75,66 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', checkVisibility);
     checkVisibility();  // Verifica se algum elemento está visível ao carregar a página
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll('.feedback');
 
+    function checkVisibility() {
+        elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                element.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility();  // Verifica se algum elemento está visível ao carregar a página
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll('.efeitocirculo');
+
+    function checkVisibility() {
+        elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                element.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility();  // Verifica se algum elemento está visível ao carregar a página
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll('.conteudoFAQS');
+
+    function checkVisibility() {
+        elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                element.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility();  // Verifica se algum elemento está visível ao carregar a página
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll('.container-utilizarIA');
+
+    function checkVisibility() {
+        elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                element.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility();  // Verifica se algum elemento está visível ao carregar a página
+});
 
 
 

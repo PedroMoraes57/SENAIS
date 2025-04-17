@@ -7,6 +7,7 @@
     --terciaria: #246EB9;
     --quarta: #CAE5FF;
     --cinza: #484854;
+    --estrelas: #FFD700;
 }   
 html{
     scroll-behavior: smooth;
@@ -281,6 +282,42 @@ body{
     opacity: 1;
     transform: translateY(0);
 }
+.feedback{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.feedback.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+.efeitocirculo{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.efeitocirculo.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+.conteudoFAQS{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.conteudoFAQS.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+.container-utilizarIA{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.container-utilizarIA.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
 .titulosectioncursos{
     margin-bottom: 5vh;
     max-width: 70vh;
@@ -310,15 +347,23 @@ body{
 }
 #primeiro{
     background-image: url(/img/curso1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #segundo{
     background-image: url(/img/curso2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #terceiro{
     background-image: url(/img/curso3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #quarto{
     background-image: url(/img/curso4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -345,7 +390,7 @@ body{
     text-align: center;
 }
 
-.containercursos:hover .overlay {
+.containercursos:hover .overlay{
     opacity: 1;
 }
 
@@ -387,42 +432,86 @@ body{
     margin-top: 5vh;
 }
 .avaliacao {
-    direction: rtl; 
     font-size: 3vh;
     display: flex;
-    padding: 2vh;
     background-color: var(--textcolor);
     width: 60vh;
     height: 40vh;
+    position: relative;
+    padding: 40px;
+    flex-direction: column;
   }
-  
-  .avaliacao input[type="radio"] {
-    display: none;
-  }
-  
-  .avaliacao label {
-    color: #ccc; 
-    cursor: pointer;
-    transition: color 0.2s;
-    max-height: 1vh;
-
-  }
-  
-  .avaliacao input:checked ~ label,
-  .avaliacao label:hover,
-  .avaliacao label:hover ~ label {
-    color: #FFD700; 
-  }
-
-  .avaliacao p{
-    margin-top: 7vh;
+.estrelas{
+  font-size: 25px;
+  color: var(--estrelas)
+}
+.avaliacao p{
+    margin-top: 15px;
     text-align:left;
     font-size: 1.7vh;
-  }
-  
+}
+.usuario img{
+    border-radius: 100%;
+    width: 65px;
+    height: 65px;
+    border: 2px solid black;
+}
+.usuario{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: row;
+    margin: auto 0 0;
+    margin-bottom: 15px;
+}
+.usuario p {
+    font-size: 17px;
+    margin-bottom: -7px;
+    font-weight: bold;
+}
+.usuario span{
+    font-size: 14px;
+}
+.FAQS{
+    background-color: black;
+}
+.container-FAQS{
+    background-image: url(/img/bundleFAQS\ \(1\).png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 110vh;
+    width: 100%;
+}
+.conteudoFAQS {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 120vh; /* Define a largura máxima */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 2vh; /* Adiciona espaçamento interno */
+}
+.textoFAQS{
+    color: white;
+    text-align: center;
 
+}
+.textoFAQS h2{
+    font-size: 30px;
+    margin-bottom: 25px;
+    margin-top: 80px;
+}
+.textoFAQS p{
+    font-size: 17px;
+    margin-bottom: 30px;
+    max-width: 900px;
+  
+}
+.container-utilizarIA{
+    height: 550px;
+    width: 100%;
+    background-color: var(--terciaria);
+    margin-top: -7px;
+}
 
-  
-  
 
 
