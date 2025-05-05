@@ -19,49 +19,63 @@ html{
     box-sizing: border-box;
 }
 body{
-    height:700vh;
+    height:9000px;
     background-color: var(--textcolor);
 }
-.pagconteudo{
-    margin-left: 4vh;
-    margin-right: 4vh;
-}
+
 .cabecalho{
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 10vh;
-    margin-left: 28vh;
-    margin-right: 28vh;
+    z-index: 9999;
+    box-shadow: 0 10px 100px rgba(255, 255, 255, 0.507);
+
+    width: 100%;
+    top: 0;
+    background-color: var(--textcolor);
+    padding: 0 20px;
+    
+}
+.cabecalho-container {
+    max-width: 1250px; /* Define a largura máxima */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
 }
 .cabecalho img{
-    height: 8vh;
-    width: 35vh;
+    height: 70px;
+    width: auto;
 }
 .cabecalho a{
-    margin-right: 8vh;
+    margin-right: 70px;
     font-size: 2vh;
     text-decoration: none;
     color: var(--segundaria);
     font-weight: bold;
 }
-.cabecalho button{
+.cabecalho button {
     padding: 1.5vh;
     border: none;
     border-radius: 1.5vh;
     width: 13vh;
-    color: var(--textcolor  );
-    background-color: var(--primaria);
+    color: var(--textcolor);
+    background: linear-gradient(100deg, var(--terciaria), var(--primaria));
+    background-size: 200% 100%;
+    background-position: left;
+    transition: background-position 0.5s ease;
     font-weight: bold;
-    transition: 0.5s;
     cursor: pointer;
     font-size: 1.5vh;
 }
-.cabecalho a:hover{
-    border-bottom: 0.4vh solid var(--segundaria);
+.cabecalho button:hover {
+    background-position: right;
 }
-.cabecalho button:hover{
-    background-color: var(--terciaria);
+.cabecalho a:hover{
+    border-bottom: 0.4vh solid var(--primaria);
 }
 .container-central {
     max-width: 141.72338090010976vh;
@@ -70,7 +84,7 @@ body{
 }
   
 .conteudo {
-    background-color: var(--primaria); /* azul de fundo */
+    background: linear-gradient(100deg, var(--terciaria), var(--primaria)); /* azul de fundo */
     width: 100%;
     padding: 4vh 0;
 }
@@ -91,18 +105,52 @@ body{
     gap: 1.5vh; /* Espaçamento entre o botão e o texto */
 }
   
-.experimente {
-    background-color: var(--terciaria);
-    border: none;
+.experimente{
+    margin-top: 20px;
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+    width: 165px;
+    font-size: 16px;
     color: var(--textcolor);
-    padding: 1.5vh;
-    width: 17vh;
-    border-radius: 1.5vh;
-    margin-top: 2vh;
-    font-size: 1.7vh;
-    font-weight: bold;
-    transition: 0.5s;
-}
+    border: 2px solid var(--textcolor);
+    border-radius: 10px;
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+  }
+.experimente::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 60px;
+    height: 50px;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: var(--textcolor);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+   
+  }
+.experimente:hover::before {
+    scale: 3;
+    
+  }
+.experimente:hover {
+    color: var(--segundaria);
+    scale: 1.1;
+    
+  }
+.experimente:active {
+    scale: 1;
+  }
+
+  .spantextIA{
+    color: var(--segundaria);
+  }
+
 .conteudo h1{
     font-size: 5.5vh;
     margin-bottom: 0.4vh;
@@ -118,13 +166,9 @@ body{
     width: 75vh;
     box-shadow: 0.5vh 0.5vh 3vh var(--segundaria);
 }
-.experimente:hover{
-    background-color: var(--segundaria);
-    cursor: pointer;
-}
 
 .textobotao p{
-    margin-top: 2.8vh;
+    margin-top: 30px;
     max-width: 25vh;
     font-size: 1.4vh;
     font-weight: bold;
@@ -143,7 +187,9 @@ body{
     font-size: 3.5vh;
 }
 .spanSENAIS{
-    color: var(--primaria);
+    background: linear-gradient(100deg, var(--terciaria), var(--primaria)); /* azul de fundo */
+    background-clip: text;
+    color: transparent;
 }
 .porqueutilizar ul{
     display: flex;
@@ -159,7 +205,9 @@ body{
 }
 .porqueutilizar i{
     font-size: 14vh;
-    color: var(--primaria);
+    background: linear-gradient(100deg, var(--terciaria), var(--primaria)); /* azul de fundo */
+    background-clip: text;
+    color: transparent;
     margin-bottom: 3vh;
 }
 .porqueutilizar p{
@@ -273,6 +321,7 @@ body{
     opacity: 1;
     transform: translateY(0);
 }
+
 .cursosSENAIS{
     opacity: 0;
     transform: translateY(50px);
@@ -320,9 +369,10 @@ body{
 }
 .titulosectioncursos{
     margin-bottom: 5vh;
-    max-width: 70vh;
-    font-size: 3vh;
+    text-align: center;
+
 }
+
 .cursos{
     display: flex;
     flex-direction: row;
@@ -332,7 +382,7 @@ body{
     margin-bottom: 10vh;
 }
 .cursosSENAIS h2{
-    font-size: 3.5vh;
+    font-size: 30.52px;
     color: var(--segundaria);
 }
 .containercursos {
@@ -410,19 +460,18 @@ body{
     background-color: var(--primaria);
 }
 .feedback{
-    background-color: var(--terciaria);
+    background: linear-gradient(100deg, var(--terciaria), var(--primaria)); /* azul de fundo */
     width: 100%;
     height: 70vh;
     margin-top: -0.7vh;
 }
 .feedback h2{
     text-align: center;
-    font-size: 3.5vh;
-    color: var(--segundaria);
-    padding-top: 6vh;
-}
-.spanbranco{
+    font-size: 35px;
     color: var(--textcolor);
+    opacity: 1;
+    padding-top: 6vh;
+    margin-bottom: 60px;
 }
 .avaliacoes{
     display: flex;
@@ -430,6 +479,7 @@ body{
     align-items: center;
     justify-content: space-evenly;
     margin-top: 5vh;
+    gap: 200px;
 }
 .avaliacao {
     font-size: 3vh;
@@ -440,6 +490,9 @@ body{
     position: relative;
     padding: 40px;
     flex-direction: column;
+    box-shadow: 0 0 15px var(--segundaria);
+    border-radius: 10px;
+
   }
 .estrelas{
   font-size: 25px;
@@ -479,7 +532,7 @@ body{
     background-image: url(/img/bundleFAQS\ \(1\).png);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 110vh;
+    height: 850px;
     width: 100%;
 }
 .conteudoFAQS {
@@ -506,12 +559,284 @@ body{
     max-width: 900px;
   
 }
-.container-utilizarIA{
-    height: 550px;
+.container-utilizarIA {
+    height: 520px;
     width: 100%;
-    background-color: var(--terciaria);
+    background: linear-gradient(100deg, var(--terciaria), var(--primaria));
     margin-top: -7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Garante espaço entre os elementos */
+    gap: 450px;
+    padding-right: 80px;
 }
+
+.personagem-esquerda img{
+    margin-top: 27px;
+    height: 500px;
+    width: 500px;
+}
+.personagem-direita img{
+    margin-top: 57px;
+    height: 470px;
+    width: 470px;
+}
+.textoIA{
+    color: var(--textcolor);
+    text-align: center;
+    max-width: 740px;
+    position: absolute;
+}
+.textoIA h2{
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+.botaoIA{
+    margin: 0 auto;
+    margin-right: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+    width: 165px;
+    font-size: 16px;
+    color: var(--textcolor);
+    border: 2px solid var(--textcolor);
+    border-radius: 10px;
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+  }
+  .botaoIA::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 60px;
+    height: 50px;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: var(--textcolor);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+   
+  }
+  .botaoIA:hover::before {
+    scale: 3;
+    
+  }
+  .botaoIA:hover {
+    color: var(--segundaria);
+    scale: 1.1;
+    
+  }
+  .botaoIA:active {
+    scale: 1;
+  }
+
+  .botaocursos{
+    margin: 0 auto;
+    margin-top: 10px;
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+    width: 165px;
+    font-size: 16px;
+    color: var(--textcolor);
+    border: 2px solid var(--textcolor);
+    border-radius: 10px;
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+  }
+  .botaocursos::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 60px;
+    height: 50px;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: var(--textcolor);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+   
+  }
+  .botaocursos:hover::before {
+    scale: 3;
+    
+  }
+  .botaocursos:hover {
+    color: var(--segundaria);
+    scale: 1.1;
+    
+  }
+  .botaocursos:active {
+    scale: 1;
+  }
+
+  .spantextIA{
+    color: var(--segundaria);
+  }
+  #scrollTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    color: var(--segundaria);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: none; /* Inicialmente escondido */
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: var(--textcolor);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+#scrollTopBtn.show {
+    display: flex;
+    opacity: 1;
+}
+
+.container-formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 5vh;
+    gap: 100px;
+}
+.textoformulario{
+    color: var(--segundaria);
+    text-align: center;
+    position: relative;
+}
+.textoformulario h2{
+    font-size: 40px;
+    margin-bottom: 35px;
+    z-index: 999;
+    max-width: 900px;
+    position: relative;
+}
+.textoformulario p{
+    font-size: 21px;
+    margin-bottom: 30px;
+    max-width: 900px;
+    position: relative;
+}
+.formulario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--textcolor);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px var(--segundaria);
+    height: 700px;
+    width: 550px;
+    text-align: center;
+    background: linear-gradient(100deg, var(--terciaria), var(--primaria)); /* azul de fundo */
+    position: relative;
+}
+.formulario input{
+    width: 500px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 0 5px var(--segundaria);
+}
+.formulario input:focus{
+    outline: none;
+    border: 2px solid var(--segundaria);
+}
+.formulario h3{
+    color: var(--textcolor);
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.formulario textarea{
+    width: 500px;
+    height: 200px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 0 5px var(--segundaria);
+    resize: none;
+}
+
+.formulario button{
+    margin: 0 auto;
+    margin-top: 10px;
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+    width: 130px;
+    font-size: 16px;
+    color: var(--textcolor);
+    border: 2px solid var(--textcolor);
+    border-radius: 10px;
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  .formulario button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 45px;
+    height: 50px;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: var(--textcolor);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+   
+  }
+  .formulario button:hover::before {
+    scale: 3;
+    
+  }
+  .formulario button:hover {
+    color: var(--segundaria);
+    scale: 1.1;
+    
+  }
+  .formulario button:active {
+    scale: 1;
+  }
+  .textoformulario img {
+    position: absolute; /* Posiciona a gosma de forma absoluta */
+    bottom: -130px; /* Ajuste para posicionar abaixo do texto */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta o alinhamento central */
+    z-index: 0; /* Garante que a gosma fique atrás do texto */
+    width: 100%; /* Ajuste o tamanho conforme necessário */
+    max-width: 600px; /* Limita a largura máxima */
+    opacity: 0.8; /* Opcional: ajusta a transparência */
+    height: 700px;
+    width: 800px;
+}
+
+
+
+
 
 
 

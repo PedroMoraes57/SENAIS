@@ -135,6 +135,24 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', checkVisibility);
     checkVisibility();  // Verifica se algum elemento está visível ao carregar a página
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) { // Quando rolar 300px para baixo
+            scrollTopBtn.classList.add("show");
+        } else {
+            scrollTopBtn.classList.remove("show");
+        }
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" // Rola suavemente até o topo
+        });
+    });
+});
 
 
 

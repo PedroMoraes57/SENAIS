@@ -8,18 +8,39 @@
     <link rel='stylesheet' type='text/css' media='screen' href='/css/style.css'>
     <link rel="website icon" type="png" href="/img/Black White Yellow Simple Initial Name Logo (2).png">
     <script src="https://kit.fontawesome.com/8bdc4a4f15.js" crossorigin="anonymous"></script>
+    <script>
+                const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) { // Quando rolar 300px para baixo
+                        scrollTopBtn.classList.add('show');
+                    } else {
+                        scrollTopBtn.classList.remove('show');
+                    }
+                    });
+
+                scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth' // rolar suavemente até o topo
+                });
+                });
+    </script>
 </head>
 <body>
     <header class="cabecalho">
-        <img src="/img/LogoSENAIS.png" alt="">
-        <nav class="interacoes">
-            <a href="#">Traduzir</a>
-            <a href="#">Estatisticas</a>
-            <a href="#">Aprendizado</a>
-            <button class="botaologin" onclick="window.location.href='login.html'">Fazer Login</button>
-        </nav>        
+        <div class="cabecalho-container">
+            <img src="/img/LogoSENAIS.png" alt="">
+            <nav class="interacoes">
+                <a href="#">Traduzir</a>
+                <a href="#">Estatisticas</a>
+                <a href="#">Aprendizado</a>
+                <button class="botaologin" onclick="window.location.href='login.html'">Fazer Login</button>
+            </nav>        
+        </div>
     </header>
     <main id="main">
+        <button id="scrollTopBtn" onclick="topFunction()"><i class="fa-solid fa-arrow-up" ></i></button>
         <section class="conteudo">
             <div class="container-central conteudo-wrapper">
               <div class="banner">
@@ -33,7 +54,7 @@
               <img src="/img/foto leo.png" alt="">
             </div>
           </section>
-        <img class="efeitocirculo" src="/img/Efeitocurvadoazulclaro.png" alt="">
+        <img class="efeitocirculo" src="/img/efeitocurva(baixo) degrade.png" alt="">
         <!-- NOVO CONTAINER CENTRALIZADO -->
         <div class="container-central">
             <section class="porqueutilizar">
@@ -78,7 +99,7 @@
             </section>
             <hr class="linhadiv">
             <section class="cursosSENAIS">
-                <h2 class="titulosectioncursos">Explore o mundo da acessiblidade com vários cursos que nós recomendamos!</h2>
+                <h2 class="titulosectioncursos">Explore o mundo da <span class="spansobrenos">acessiblidade </span>com vários cursos que nós <span class="spansobrenos">recomendamos!</span></h2>
                 <div class="cursos">
                     <div class="containercursos" id="primeiro">
                         <img src="/img/curso1.jpg" alt="">
@@ -112,9 +133,12 @@
                 </div>
             </section>
         </div>
-        <img src="/img/efeitocurvado(cima)azulescuro.png" alt="" class="efeitocirculo">
+        <img src="/img/efeitocurva(cima) degrade.png" alt="" class="efeitocirculo">
         <section class="feedback">
-            <h2>Construímos nossa <span class="spanbranco">história</span> com ajuda de <span class="spanbranco">vocês!</span></h2>
+            <h2>Construímos nossa história com ajuda de vocês!</span></h2>
+            <div class="container-central">
+
+            
             <div class="avaliacoes">
                 <div class="avaliacao">
                     <div class="estrelas">
@@ -157,7 +181,8 @@
                         </div>
                     </div>
                   </div>
-            </div>    
+            </div>  
+        </div>  
         </section>
         <section class="FAQS">
             <div class="container-FAQS">
@@ -172,23 +197,50 @@
                 </div>
             </div>
         </section>
-        <img src="/img/efeitocurvado(cima)azulescuro.png" alt="" class="efeitocirculo">
+        <img src="/img/efeitocurva(cima) degrade.png" alt="" class="efeitocirculo">
         <section class="utilizarIA">
             <div class="container-utilizarIA">
                 <div class="personagem-esquerda">
-                    <img src="/img/Claudio.png" alt="Personagem à esquerda">
+                    <img src="/img/persoLeandro.png" alt="Personagem à esquerda">
                 </div>
                 <div class="textoIA">
-                    <h2>Utilize nossa IA para traduzir em tempo real sua conversa em libras!</h2>
+                    <h2>Utilize nossa <span class="spantextIA">IA para traduzir em tempo real</span> sua conversa em <span class="spantextIA">libras!</span></h2>
                     <button class="botaoIA">IA Tradutora</button>
                     <button class="botaocursos">Aprenda Libras!</button>
                 </div>
                 <div class="personagem-direita">
-                    <img src="/img/Debora.png" alt="Personagem à direita">
+                    <img src="/img/persoDebora.png" alt="Personagem à direita">
+                </div>
+            </div>
+        </section>
+        <section class="contato">
+            <div class="container-formulario">
+                <div class="textoformulario">
+                    <img src="/img/efeitogosma.png" alt="">
+                    <h2>Entre em contato com o <span class="spansobrenos">SENAIS</span> para esclarecer <span class="spansobrenos">dúvidas</span>
+                         e nos ajudar a melhorar!</h2>
+                <p>Seu feedback é muito gratificante para nós, buscamos sempre o bem-estar de todos e tentamos entregar o melhor serviço.</p>
+                </div>
+                <div class="formulario">
+                    <form action="">
+                        <h3>Escreva seus dados e sua dúvida abaixo.</h3>
+                        <input type="text" placeholder="Seu Nome" required>
+                        <input type="email" placeholder="Seu Email" required>
+                        <input type="text" placeholder="Assunto da mensagem" required>
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Escreva sua dúvida aqui" ></textarea>
+                        <button type="submit">Enviar</button>
+                        <button type="reset">Limpar Tudo</button>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
     <script src="/js/main.js"></script>
+    <script>
+        function topFunction() {
+        document.body.scrollTop = 0; // Para navegadores Safari
+        document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE e Opera
+        }
+    </script>
 </body>
 </html>
